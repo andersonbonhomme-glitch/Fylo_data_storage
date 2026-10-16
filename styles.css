@@ -1,0 +1,161 @@
+:root {
+    --neutral-color1: hsl(243, 100%, 93%);
+    --neutral-color2: hsl(229, 7%, 55%);
+    --neutral-color3: hsl(228, 56%, 26%);
+    --neutral-color4: hsl(229, 57%, 11%);
+    --neutral-color5: hsl(0, 0%, 100%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+*, ::before, ::after {
+box-sizing: border-box;
+}
+
+/* For S25 */
+
+body {
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    width: 100%;
+    min-height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background-image: url(./images/bg-mobile.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.logo {
+    width: 150px;
+    margin-left: 1rem;
+    margin-bottom: 1rem;
+}
+
+.flex-container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.box1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 2rem;
+    width: 19rem;
+    height: 12.5rem;
+    background-color: var(--neutral-color3);
+    border-top-right-radius: 40%;
+    border-top-left-radius: 13px;
+    border-bottom-left-radius: 13px; 
+    border-bottom-right-radius: 13px;
+}
+
+.document, .folder, .upload {
+    background-color: var(--neutral-color4);
+    border: 1px solid transparent;
+    border-radius: 13px;
+    padding: 0.8rem;
+}
+
+.icons-container {
+        display: flex;
+        justify-content: space-around;
+}
+
+.box2 {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5rem;
+    width: 19rem;
+    height: 10rem;
+    background-color: var(--neutral-color3);
+    border: 1px solid transparent;
+    border-radius: 13px;
+}
+
+.remaining-storage {
+    margin-bottom: 1rem;
+    color: var(--neutral-color2);
+}
+
+.color {
+    color: var(--neutral-color1);
+    font-size: 0.8125rem;
+}
+
+.progress-bar {
+    border: 1px solid white;
+    width: 90%;
+    height: 10%;
+    border-radius: 20px;
+
+    .bar {
+        width: 65%;;
+        height: 100%;
+        background: linear-gradient(to right, hsl(6, 100%, 80%), hsl(335, 100%, 65%));
+        border-radius: 20px;
+    }
+}
+
+.values {
+    width: 100%;
+    font-size: 0.9rem;
+    color: var(--neutral-color1);
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0.9rem;
+}
+
+.mini-box {
+    position: absolute;
+    padding: 1.3em;
+    background-color: var(--neutral-color5);
+    bottom: -35px;
+    border-radius: 20px;
+
+    .remain-storage {
+        font-size: 1.9rem;
+        font-weight: 700;
+        color: black
+    }
+
+    p {
+        color: var(--neutral-color2);
+    }
+}
+
+/* For a laptop */
+
+@media screen and (min-width: 90rem) {
+    body {
+        background: linear-gradient(to bottom, hsl(229, 57%, 11%), url(./images/bg-desktop.png));
+    }
+
+    .flex-container{
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .box1 {
+        width: 21.875rem;
+    }
+
+    .logo {
+        margin-bottom: 2rem;
+    }
+
+    .box2 {
+        width: 33.75rem;
+        height: 9.688rem;
+    }
+}
